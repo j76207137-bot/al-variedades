@@ -1,234 +1,128 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AL Variedades</title>
 
-    <meta charset="UTF-8">
+  <style>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    body{
+      margin:0;
+      padding:0;
+      background:#f5f1ec;
+      font-family: Arial, sans-serif;
+      text-align:center;
+      color:#5f6b52;
+    }
 
-    <title>AL VARIEDADES</title>
+    .container{
+      padding:40px 20px;
+    }
 
-    <style>
+    .logo{
+      width:300px;
+      max-width:90%;
+      margin-bottom:20px;
+    }
 
-        *{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: Arial;
-        }
+    h1{
+      font-size:48px;
+      margin:10px 0;
+    }
 
-        body{
-            background: #111;
-            color: white;
-        }
+    h2{
+      font-size:28px;
+      font-weight:normal;
+      margin-bottom:10px;
+    }
 
-        header{
-            background: linear-gradient(90deg, orange, gold);
-            color: black;
-            text-align: center;
-            padding: 40px 20px;
-        }
+    .linha{
+      width:250px;
+      height:1px;
+      background:#cfc7be;
+      margin:20px auto;
+    }
 
-        header h1{
-            font-size: 60px;
-        }
+    .slogan{
+      font-size:32px;
+      font-style:italic;
+      margin-top:40px;
+      color:#8d847b;
+    }
 
-        header p{
-            font-size: 24px;
-            margin-top: 10px;
-            font-weight: bold;
-        }
+    .contato{
+      margin-top:50px;
+      font-size:20px;
+      line-height:35px;
+    }
 
-        .banner{
-            text-align: center;
-            padding: 70px 20px;
-        }
+    .botao{
+      display:inline-block;
+      margin-top:30px;
+      padding:15px 30px;
+      background:#5f6b52;
+      color:white;
+      text-decoration:none;
+      border-radius:10px;
+      font-size:20px;
+    }
 
-        .banner h2{
-            font-size: 50px;
-            color: orange;
-        }
+    .botao:hover{
+      background:#4a5440;
+    }
 
-        .banner p{
-            margin-top: 15px;
-            font-size: 24px;
-            color: #ddd;
-        }
-
-        .produtos{
-            display: flex;
-            justify-content: center;
-            gap: 25px;
-            flex-wrap: wrap;
-            padding: 40px 20px;
-        }
-
-        .card{
-            background: #222;
-            width: 300px;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-            transition: 0.3s;
-        }
-
-        .card:hover{
-            transform: scale(1.05);
-        }
-
-        .card img{
-            width: 100%;
-            height: 250px;
-            object-fit: cover;
-        }
-
-        .card h3{
-            text-align: center;
-            margin-top: 15px;
-            font-size: 30px;
-            color: orange;
-        }
-
-        .card p{
-            text-align: center;
-            padding: 15px;
-            font-size: 20px;
-            color: #ddd;
-        }
-
-        .botao{
-            display: block;
-            width: 80%;
-            margin: 20px auto;
-            text-align: center;
-            background: orange;
-            color: black;
-            padding: 15px;
-            border-radius: 12px;
-            text-decoration: none;
-            font-size: 20px;
-            font-weight: bold;
-        }
-
-        .botao:hover{
-            background: gold;
-        }
-
-        .whatsapp{
-            text-align: center;
-            margin: 50px 0;
-        }
-
-        .whatsapp a{
-            background: #25D366;
-            color: white;
-            padding: 20px 40px;
-            text-decoration: none;
-            border-radius: 15px;
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        footer{
-            background: black;
-            text-align: center;
-            padding: 25px;
-            color: #aaa;
-            margin-top: 40px;
-            font-size: 18px;
-        }
-
-    </style>
-
+  </style>
 </head>
 
 <body>
 
-    <header>
+  <div class="container">
 
-        <h1>🛍️ AL VARIEDADES</h1>
+    <img src="logo.jpg" alt="Logo AL Variedades" class="logo">
 
-        <p>Tudo que você precisa em um só lugar</p>
+    <h1>AL Variedades</h1>
 
-    </header>
+    <h2>Moda Infantil & Acessórios</h2>
 
-    <section class="banner">
+    <div class="linha"></div>
 
-        <h2>PROMOÇÕES IMPERDÍVEIS 🔥</h2>
+    <p class="slogan">
+      Pequenos detalhes, grandes cuidados.
+    </p>
 
-        <p>Qualidade, preço baixo e atendimento top 😎</p>
+    <div class="contato">
 
-    </section>
+      <p>
+        WhatsApp: (74) 99936-9389
+      </p>
 
-    <section class="produtos">
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
-
-            <h3>Fone Bluetooth</h3>
-
-            <p>Som potente por apenas R$ 89,90</p>
-
-            <a href="#" class="botao">
-
-                Comprar
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
-
-            <h3>Tênis Esportivo</h3>
-
-            <p>Conforto e estilo por R$ 149,90</p>
-
-            <a href="#" class="botao">
-
-                Comprar
-
-            </a>
-
-        </div>
-
-        <div class="card">
-
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30">
-
-            <h3>Relógio Premium</h3>
-
-            <p>Elegância e qualidade por R$ 99,90</p>
-
-            <a href="#" class="botao">
-
-                Comprar
-
-            </a>
-
-        </div>
-
-    </section>
-
-    <div class="whatsapp">
-
-        <a href="https://wa.me/5592999999999">
-
-            📱 Falar no WhatsApp
-
-        </a>
+      <p>
+        Email:
+        joseluissantosdasilva11@gmail.com
+      </p>
 
     </div>
 
-    <footer>
+    <a class="botao"
+       href="https://wa.me/5574999369389"
+       target="_blank">
 
-        © 2026 AL VARIEDADES - Todos os direitos reservados
+       Falar no WhatsApp
 
-    </footer>
+    </a>
 
+  </div>
+<h2>Produtos em Destaque</h2>
+
+
+
+<a href="https://s.shopee.com.br/2V0fNryfNZ" target="_blank">
+<button>Comprar na Shopee</button>
+</a>
+
+
+
+</a>
 </body>
-
 </html>
