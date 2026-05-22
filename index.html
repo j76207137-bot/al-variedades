@@ -1,128 +1,746 @@
+# Código Completo — Loja Virtual AL Variedades
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AL Variedades</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AL VARIEDADES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-  <style>
+<style>
 
-    body{
-      margin:0;
-      padding:0;
-      background:#f5f1ec;
-      font-family: Arial, sans-serif;
-      text-align:center;
-      color:#5f6b52;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
 
-    .container{
-      padding:40px 20px;
-    }
+body{
+background:#f5f5f5;
+overflow-x:hidden;
+}
 
-    .logo{
-      width:300px;
-      max-width:90%;
-      margin-bottom:20px;
-    }
+/* HEADER */
 
-    h1{
-      font-size:48px;
-      margin:10px 0;
-    }
+header{
+width:100%;
+background:#ff5a00;
+padding:18px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:fixed;
+top:0;
+left:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
 
-    h2{
-      font-size:28px;
-      font-weight:normal;
-      margin-bottom:10px;
-    }
+.logo{
+font-size:32px;
+font-weight:800;
+color:#fff;
+letter-spacing:2px;
+}
 
-    .linha{
-      width:250px;
-      height:1px;
-      background:#cfc7be;
-      margin:20px auto;
-    }
+.logo span{
+color:#000;
+}
 
-    .slogan{
-      font-size:32px;
-      font-style:italic;
-      margin-top:40px;
-      color:#8d847b;
-    }
+nav{
+display:flex;
+gap:25px;
+}
 
-    .contato{
-      margin-top:50px;
-      font-size:20px;
-      line-height:35px;
-    }
+nav a{
+text-decoration:none;
+color:#fff;
+font-weight:500;
+transition:0.3s;
+}
 
-    .botao{
-      display:inline-block;
-      margin-top:30px;
-      padding:15px 30px;
-      background:#5f6b52;
-      color:white;
-      text-decoration:none;
-      border-radius:10px;
-      font-size:20px;
-    }
+nav a:hover{
+transform:translateY(-3px);
+color:#000;
+}
 
-    .botao:hover{
-      background:#4a5440;
-    }
+.icons{
+display:flex;
+gap:18px;
+align-items:center;
+}
 
-  </style>
+.icons i{
+color:#fff;
+font-size:22px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.icons i:hover{
+transform:scale(1.2);
+}
+
+/* HERO */
+
+.hero{
+width:100%;
+height:100vh;
+background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:0 10%;
+}
+
+.hero-content h1{
+font-size:70px;
+color:#fff;
+font-weight:800;
+line-height:1.1;
+animation:fadeUp 1s ease;
+}
+
+.hero-content p{
+color:#fff;
+font-size:20px;
+margin-top:20px;
+max-width:800px;
+line-height:1.7;
+animation:fadeUp 1.3s ease;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:35px;
+padding:16px 40px;
+background:#ff5a00;
+color:#fff;
+text-decoration:none;
+font-weight:700;
+border-radius:50px;
+transition:0.4s;
+animation:fadeUp 1.5s ease;
+}
+
+.hero-btn:hover{
+background:#fff;
+color:#ff5a00;
+transform:scale(1.05);
+}
+
+/* PROMO */
+
+.promo{
+padding:90px 8%;
+}
+
+.section-title{
+font-size:42px;
+font-weight:800;
+text-align:center;
+margin-bottom:50px;
+color:#111;
+}
+
+.promo-card{
+background:linear-gradient(135deg,#ff5a00,#ff8800);
+border-radius:30px;
+padding:50px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:40px;
+color:#fff;
+box-shadow:0 15px 40px rgba(0,0,0,0.15);
+}
+
+.promo-text h2{
+font-size:50px;
+margin-bottom:20px;
+}
+
+.promo-text p{
+font-size:18px;
+line-height:1.8;
+max-width:600px;
+}
+
+.promo-text a{
+display:inline-block;
+margin-top:25px;
+padding:15px 35px;
+background:#fff;
+color:#ff5a00;
+text-decoration:none;
+font-weight:700;
+border-radius:40px;
+transition:0.3s;
+}
+
+.promo-text a:hover{
+transform:scale(1.05);
+}
+
+.promo-img img{
+width:350px;
+filter:drop-shadow(0 10px 30px rgba(0,0,0,0.3));
+animation:float 3s ease-in-out infinite;
+}
+
+/* PRODUTOS */
+
+.products{
+padding:40px 8% 100px;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:30px;
+}
+
+.card{
+background:#fff;
+border-radius:25px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.4s;
+position:relative;
+}
+
+.card:hover{
+transform:translateY(-10px) scale(1.02);
+}
+
+.card img{
+width:100%;
+height:300px;
+object-fit:cover;
+transition:0.5s;
+}
+
+.card:hover img{
+transform:scale(1.08);
+}
+
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:red;
+color:#fff;
+padding:8px 15px;
+border-radius:30px;
+font-size:13px;
+font-weight:700;
+}
+
+.card-content{
+padding:25px;
+}
+
+.card-content h3{
+font-size:24px;
+margin-bottom:10px;
+color:#111;
+}
+
+.card-content p{
+font-size:15px;
+color:#666;
+line-height:1.6;
+margin-bottom:18px;
+}
+
+.price{
+font-size:30px;
+font-weight:800;
+color:#ff5a00;
+}
+
+.old-price{
+text-decoration:line-through;
+font-size:16px;
+color:#999;
+margin-left:10px;
+}
+
+.buy-btn{
+width:100%;
+margin-top:20px;
+padding:15px;
+border:none;
+background:#ff5a00;
+color:#fff;
+font-size:16px;
+font-weight:700;
+border-radius:15px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#111;
+transform:scale(1.02);
+}
+
+/* ELOGIOS */
+
+.reviews{
+padding:50px 8% 100px;
+text-align:center;
+}
+
+.review-btn{
+padding:18px 40px;
+background:#111;
+color:#fff;
+border:none;
+border-radius:50px;
+font-size:17px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.review-btn:hover{
+background:#ff5a00;
+transform:scale(1.05);
+}
+
+.review-box{
+margin-top:40px;
+display:none;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.review-card{
+background:#fff;
+padding:30px;
+border-radius:25px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+text-align:left;
+animation:fadeUp 0.8s ease;
+}
+
+.review-card h4{
+font-size:20px;
+margin-bottom:10px;
+}
+
+.review-card span{
+color:#ffb400;
+font-size:20px;
+}
+
+.review-card p{
+margin-top:15px;
+line-height:1.7;
+color:#666;
+}
+
+/* FOOTER */
+
+footer{
+background:#111;
+color:#fff;
+padding:60px 8%;
+}
+
+.footer-content{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+
+.footer-box h3{
+font-size:24px;
+margin-bottom:20px;
+}
+
+.footer-box p,
+.footer-box a{
+color:#bbb;
+text-decoration:none;
+line-height:2;
+transition:0.3s;
+}
+
+.footer-box a:hover{
+color:#ff5a00;
+}
+
+.copy{
+text-align:center;
+padding-top:40px;
+color:#777;
+font-size:14px;
+}
+
+/* WHATS */
+
+.whatsapp{
+position:fixed;
+bottom:30px;
+right:30px;
+width:70px;
+height:70px;
+background:#25d366;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:35px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+animation:pulse 2s infinite;
+z-index:999;
+}
+
+/* CARRINHO */
+
+.cart-popup{
+position:fixed;
+top:100px;
+right:-400px;
+width:350px;
+height:500px;
+background:#fff;
+border-radius:20px;
+box-shadow:0 10px 40px rgba(0,0,0,0.2);
+padding:25px;
+transition:0.5s;
+z-index:1001;
+overflow-y:auto;
+}
+
+.cart-popup.active{
+right:20px;
+}
+
+.cart-popup h2{
+margin-bottom:20px;
+}
+
+.cart-item{
+padding:15px;
+background:#f5f5f5;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+/* ANIMAÇÕES */
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+@keyframes float{
+0%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-15px);
+}
+100%{
+transform:translateY(0px);
+}
+}
+
+@keyframes pulse{
+0%{
+box-shadow:0 0 0 0 rgba(37,211,102,0.7);
+}
+70%{
+box-shadow:0 0 0 20px rgba(37,211,102,0);
+}
+100%{
+box-shadow:0 0 0 0 rgba(37,211,102,0);
+}
+}
+
+/* RESPONSIVO */
+
+@media(max-width:900px){
+
+.hero-content h1{
+font-size:45px;
+}
+
+.promo-card{
+flex-direction:column;
+text-align:center;
+}
+
+nav{
+display:none;
+}
+
+}
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
-
 <body>
 
-  <div class="container">
+<!-- HEADER -->
 
-    <img src="logo.jpg" alt="Logo AL Variedades" class="logo">
+<header>
 
-    <h1>AL Variedades</h1>
+<div class="logo">AL <span>VARIEDADES</span></div>
 
-    <h2>Moda Infantil & Acessórios</h2>
+<nav>
+<a href="#inicio">Início</a>
+<a href="#promo">Promoções</a>
+<a href="#produtos">Produtos</a>
+<a href="#reviews">Avaliações</a>
+<a href="#contato">Contato</a>
+</nav>
 
-    <div class="linha"></div>
+<div class="icons">
+<i class="fa-solid fa-heart"></i>
+<i class="fa-solid fa-cart-shopping" onclick="openCart()"></i>
+</div>
 
-    <p class="slogan">
-      Pequenos detalhes, grandes cuidados.
-    </p>
+</header>
 
-    <div class="contato">
+<!-- HERO -->
 
-      <p>
-        WhatsApp: (74) 99936-9389
-      </p>
+<section class="hero" id="inicio">
+<div class="hero-content">
+<h1>SEU ESTILO COMEÇA NA AL VARIEDADES</h1>
+<p>
+Qualidade, preço baixo e estilo em um só lugar. A loja que transforma compras simples em experiências incríveis. Produtos modernos, promoções reais e atendimento que conquista.
+</p>
+<a href="#produtos" class="hero-btn">COMPRAR AGORA</a>
+</div>
+</section>
 
-      <p>
-        Email:
-        joseluissantosdasilva11@gmail.com
-      </p>
+<!-- PROMOÇÃO -->
 
-    </div>
+<section class="promo" id="promo">
+<h2 class="section-title">Oferta Especial da Semana</h2>
 
-    <a class="botao"
-       href="https://wa.me/5574999369389"
-       target="_blank">
+<div class="promo-card">
 
-       Falar no WhatsApp
+<div class="promo-text">
+<h2>ATÉ 70% OFF</h2>
+<p>
+Aproveite as promoções exclusivas da AL Variedades. Produtos selecionados com qualidade premium, preços acessíveis e entrega rápida. Inspirado nas maiores lojas online do mundo.
+</p>
+<a href="#produtos">VER OFERTAS</a>
+</div>
 
-    </a>
+<div class="promo-img">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1200&auto=format&fit=crop">
+</div>
 
-  </div>
-<h2>Produtos em Destaque</h2>
+</div>
+</section>
 
+<!-- PRODUTOS -->
 
+<section class="products" id="produtos">
+<h2 class="section-title">Produtos em Destaque</h2>
 
-<a href="https://s.shopee.com.br/2V0fNryfNZ" target="_blank">
-<button>Comprar na Shopee</button>
+<div class="product-grid">
+
+<div class="card">
+<div class="badge">MAIS VENDIDO</div>
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Tênis Premium</h3>
+<p>
+Conforto, estilo e resistência para o seu dia a dia. Produto moderno com acabamento premium.
+</p>
+<div>
+<span class="price">R$ 149,90</span>
+<span class="old-price">R$ 249,90</span>
+</div>
+<button class="buy-btn" onclick="addCart('Tênis Premium - R$149,90')">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<div class="card">
+<div class="badge">PROMOÇÃO</div>
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Camiseta Fashion</h3>
+<p>
+Visual moderno inspirado nas maiores marcas. Qualidade superior e preço acessível.
+</p>
+<div>
+<span class="price">R$ 59,90</span>
+<span class="old-price">R$ 99,90</span>
+</div>
+<button class="buy-btn" onclick="addCart('Camiseta Fashion - R$59,90')">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+<div class="card">
+<div class="badge">SUPER OFERTA</div>
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1200&auto=format&fit=crop">
+<div class="card-content">
+<h3>Jaqueta Moderna</h3>
+<p>
+Elegância e conforto em uma peça única. Perfeita para quem gosta de estilo marcante.
+</p>
+<div>
+<span class="price">R$ 189,90</span>
+<span class="old-price">R$ 299,90</span>
+</div>
+<button class="buy-btn" onclick="addCart('Jaqueta Moderna - R$189,90')">Adicionar ao Carrinho</button>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ELOGIOS -->
+
+<section class="reviews" id="reviews">
+<h2 class="section-title">O Que Nossos Clientes Dizem</h2>
+
+<button class="review-btn" onclick="showReviews()">
+Ver Avaliações
+</button>
+
+<div class="review-box" id="reviewBox">
+
+<div class="review-card">
+<h4>Mariana Silva</h4>
+<span>★★★★★</span>
+<p>
+Nunca vi uma loja tão bonita e organizada. Produto chegou rápido e com qualidade acima do esperado.
+</p>
+</div>
+
+<div class="review-card">
+<h4>Carlos Henrique</h4>
+<span>★★★★★</span>
+<p>
+Preço excelente e atendimento perfeito. A AL Variedades virou minha loja favorita.
+</p>
+</div>
+
+<div class="review-card">
+<h4>Juliana Souza</h4>
+<span>★★★★★</span>
+<p>
+Comprei pela primeira vez e fiquei impressionada com a qualidade e beleza do site.
+</p>
+</div>
+
+</div>
+</section>
+
+<!-- RODAPÉ -->
+
+<footer id="contato">
+
+<div class="footer-content">
+
+<div class="footer-box">
+<h3>AL VARIEDADES</h3>
+<p>
+Moda, qualidade e preço baixo em um só lugar. Inspirando confiança e estilo todos os dias.
+</p>
+</div>
+
+<div class="footer-box">
+<h3>Links</h3>
+<a href="#">Início</a><br>
+<a href="#">Promoções</a><br>
+<a href="#">Produtos</a><br>
+<a href="#">Contato</a>
+</div>
+
+<div class="footer-box">
+<h3>Contato</h3>
+<p>WhatsApp: (75)999883008</p>
+<p>Email: contato@alvariedades.com</p>
+<p>Brasil</p>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 AL VARIEDADES - Todos os direitos reservados.
+</div>
+
+</footer>
+
+<!-- WHATSAPP -->
+
+<a href="https://wa.me/5587999999999" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
 </a>
 
+<!-- CARRINHO -->
 
+<div class="cart-popup" id="cartPopup">
+<h2>Seu Carrinho</h2>
+<div id="cartItems"></div>
+</div>
 
-</a>
+<script>
+
+function showReviews(){
+
+let box = document.getElementById('reviewBox');
+
+if(box.style.display === 'grid'){
+box.style.display = 'none';
+}else{
+box.style.display = 'grid';
+}
+
+}
+
+function openCart(){
+
+document.getElementById('cartPopup').classList.toggle('active');
+
+}
+
+function addCart(product){
+
+let cart = document.getElementById('cartItems');
+
+let item = document.createElement('div');
+item.classList.add('cart-item');
+item.innerHTML = product;
+
+cart.appendChild(item);
+
+alert('Produto adicionado ao carrinho!');
+
+}
+
+</script>
+
 </body>
 </html>
+```
