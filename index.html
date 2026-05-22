@@ -8,7 +8,6 @@
 
 <style>
 
-/* RESET */
 *{
 margin:0;
 padding:0;
@@ -18,7 +17,6 @@ font-family:Arial;
 
 body{
 background:#f5f5f5;
-overflow-x:hidden;
 }
 
 /* HEADER */
@@ -32,49 +30,12 @@ font-weight:800;
 }
 
 /* CATEGORIAS */
-.categories{
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:10px;
-background:#fff;
+.category-title{
+padding:15px;
+font-size:20px;
+font-weight:bold;
 }
 
-.categories div{
-padding:10px 15px;
-background:#eee;
-border-radius:20px;
-white-space:nowrap;
-font-size:14px;
-}
-
-/* SLIDER */
-.slider{
-width:100%;
-height:420px;
-position:relative;
-overflow:hidden;
-}
-
-.slide{
-position:absolute;
-width:100%;
-height:100%;
-opacity:0;
-transition:1s;
-}
-
-.slide.active{
-opacity:1;
-}
-
-.slide img{
-width:100%;
-height:100%;
-object-fit:cover;
-}
-
-/* PRODUTOS */
 .products{
 display:grid;
 grid-template-columns:repeat(2,1fr);
@@ -91,7 +52,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.1);
 
 .card img{
 width:100%;
-height:170px;
+height:160px;
 object-fit:cover;
 }
 
@@ -102,41 +63,18 @@ padding:10px;
 .price{
 color:#ff5a00;
 font-weight:bold;
+margin-top:5px;
 }
 
-/* BOTÃO */
 button{
 width:100%;
 padding:10px;
 background:#25d366;
 color:#fff;
 border:none;
-cursor:pointer;
 font-weight:bold;
+cursor:pointer;
 border-radius:8px;
-}
-
-/* CARRINHO */
-.cart{
-position:fixed;
-top:20px;
-right:20px;
-background:#fff;
-padding:10px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-width:200px;
-}
-
-.cart h4{
-margin-bottom:10px;
-}
-
-.cart-item{
-font-size:13px;
-margin-bottom:5px;
-display:flex;
-justify-content:space-between;
 }
 
 /* WHATSAPP */
@@ -165,76 +103,133 @@ text-decoration:none;
 AL VARIEDADES
 </header>
 
-<!-- CATEGORIAS -->
-<div class="categories">
-<div>Todos</div>
-<div>Masculino</div>
-<div>Feminino</div>
-<div>Infantil</div>
-<div>Promoções</div>
-</div>
-
-<!-- SLIDER 4 IMAGENS -->
-<section class="slider">
-
-<div class="slide active">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
-</div>
-
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
-</div>
-
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
-</div>
-
-<div class="slide">
-<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
-</div>
-
-</section>
-
-<!-- PRODUTOS -->
+<!-- CATEGORIA 1 -->
+<div class="category-title">👕 Camisas</div>
 <section class="products">
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
 <div class="card-content">
-<p>Camisa Estilosa</p>
+<p>Camisa Branca Estilosa</p>
 <p class="price">R$ 59,90</p>
-<button onclick="add('Camisa Estilosa - 59,90')">Adicionar</button>
+<button onclick="buy('Camisa Branca Estilosa')">Comprar</button>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1520975958225-6a8b4c5c8f8c">
 <div class="card-content">
-<p>Tênis Moderno</p>
-<p class="price">R$ 129,90</p>
-<button onclick="add('Tênis Moderno - 129,90')">Adicionar</button>
+<p>Camisa Preta Slim</p>
+<p class="price">R$ 64,90</p>
+<button onclick="buy('Camisa Preta Slim')">Comprar</button>
 </div>
 </div>
 
 <div class="card">
 <img src="https://images.unsplash.com/photo-1520975869019-4b8c5c6f7a1b">
 <div class="card-content">
-<p>Jaqueta Premium</p>
-<p class="price">R$ 199,90</p>
-<button onclick="add('Jaqueta Premium - 199,90')">Adicionar</button>
+<p>Camisa Casual Azul</p>
+<p class="price">R$ 69,90</p>
+<button onclick="buy('Camisa Azul Casual')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975930058-9f3b9d4a7f2a">
+<div class="card-content">
+<p>Camisa Oversized</p>
+<p class="price">R$ 79,90</p>
+<button onclick="buy('Camisa Oversized')">Comprar</button>
 </div>
 </div>
 
 </section>
 
-<!-- CARRINHO -->
-<div class="cart">
-<h4>🛒 Carrinho</h4>
-<div id="cart"></div>
-<button onclick="sendWhats()">Comprar no WhatsApp</button>
+<!-- CATEGORIA 2 -->
+<div class="category-title">👟 Tênis</div>
+<section class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
+<div class="card-content">
+<p>Tênis Moderno</p>
+<p class="price">R$ 129,90</p>
+<button onclick="buy('Tênis Moderno')">Comprar</button>
+</div>
 </div>
 
-<!-- WHATSAPP FLUTUANTE -->
+<div class="card">
+<img src="https://images.unsplash.com/photo-1600269452121-4f2416e55c28">
+<div class="card-content">
+<p>Tênis Esportivo</p>
+<p class="price">R$ 149,90</p>
+<button onclick="buy('Tênis Esportivo')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1528701800489-20be3c3ea2c5">
+<div class="card-content">
+<p>Tênis Branco Casual</p>
+<p class="price">R$ 139,90</p>
+<button onclick="buy('Tênis Branco')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520256862855-398228c41684">
+<div class="card-content">
+<p>Tênis Street Style</p>
+<p class="price">R$ 159,90</p>
+<button onclick="buy('Tênis Street')">Comprar</button>
+</div>
+</div>
+
+</section>
+
+<!-- CATEGORIA 3 -->
+<div class="category-title">🧥 Jaquetas</div>
+<section class="products">
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975869019-4b8c5c6f7a1b">
+<div class="card-content">
+<p>Jaqueta Premium</p>
+<p class="price">R$ 199,90</p>
+<button onclick="buy('Jaqueta Premium')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+<div class="card-content">
+<p>Jaqueta Jeans</p>
+<p class="price">R$ 189,90</p>
+<button onclick="buy('Jaqueta Jeans')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975958225-6a8b4c5c8f8c">
+<div class="card-content">
+<p>Jaqueta Street</p>
+<p class="price">R$ 209,90</p>
+<button onclick="buy('Jaqueta Street')">Comprar</button>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.unsplash.com/photo-1520975930058-9f3b9d4a7f2a">
+<div class="card-content">
+<p>Jaqueta Casual</p>
+<p class="price">R$ 179,90</p>
+<button onclick="buy('Jaqueta Casual')">Comprar</button>
+</div>
+</div>
+
+</section>
+
+<!-- WHATSAPP -->
 <a class="whatsapp" target="_blank"
 href="https://wa.me/5575999883008">
 📱
@@ -242,52 +237,9 @@ href="https://wa.me/5575999883008">
 
 <script>
 
-let slides = document.querySelectorAll('.slide');
-let current = 0;
-
-function nextSlide(){
-slides[current].classList.remove('active');
-current = (current + 1) % slides.length;
-slides[current].classList.add('active');
-}
-
-setInterval(nextSlide,3000);
-
-/* CARRINHO */
-let cart = [];
-
-function add(item){
-cart.push(item);
-render();
-}
-
-function render(){
-let box = document.getElementById("cart");
-box.innerHTML = "";
-
-cart.forEach((item, index)=>{
-box.innerHTML += `<div class="cart-item">
-${item}
-<span onclick="removeItem(${index})">❌</span>
-</div>`;
-});
-}
-
-function removeItem(i){
-cart.splice(i,1);
-render();
-}
-
-/* ENVIAR WHATSAPP */
-function sendWhats(){
-
-let msg = "Olá! quero comprar:%0A";
-
-cart.forEach(i=>{
-msg += "- " + i + "%0A";
-});
-
-window.open("https://wa.me/5575999883008?text=" + msg, "_blank");
+function buy(product){
+let msg = "Olá! quero comprar: " + product;
+window.open("https://wa.me/5575999883008?text=" + encodeURIComponent(msg), "_blank");
 }
 
 </script>
