@@ -22,7 +22,7 @@ overflow-x:hidden;
 
 /* HEADER */
 header{
-background:#ff6600;
+background:#ff5a00;
 padding:15px;
 color:#fff;
 text-align:center;
@@ -70,25 +70,23 @@ background:#fff;
 }
 
 .banner-desc h2{
-font-size:28px;
+font-size:26px;
 margin-bottom:10px;
 }
 
 .banner-desc p{
 color:#666;
-font-size:16px;
-line-height:1.6;
+line-height:1.5;
 }
 
 /* PRODUTOS */
 .product-grid{
 display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:20px;
-padding:20px;
+grid-template-columns:repeat(2,1fr);
+gap:15px;
+padding:15px;
 }
 
-/* CARD */
 .card{
 background:#fff;
 border-radius:10px;
@@ -107,7 +105,7 @@ padding:10px;
 }
 
 .price{
-color:#ff6600;
+color:#ff5a00;
 font-weight:bold;
 }
 
@@ -137,7 +135,6 @@ justify-content:center;
 font-size:28px;
 color:#fff;
 text-decoration:none;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 </style>
@@ -149,7 +146,7 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 AL VARIEDADES
 </header>
 
-<!-- SLIDER (4 IMAGENS) -->
+<!-- SLIDER (AGORA COM 4 IMAGENS) -->
 <section class="slider">
 
 <div class="slides">
@@ -166,7 +163,7 @@ AL VARIEDADES
 <img src="https://picsum.photos/id/1025/1600/900">
 </div>
 
-<!-- +1 IMAGEM -->
+<!-- NOVA IMAGEM -->
 <div class="slide">
 <img src="https://picsum.photos/id/1035/1600/900">
 </div>
@@ -175,14 +172,13 @@ AL VARIEDADES
 
 </section>
 
-<!-- DESCRIÇÃO -->
+<!-- DESCRIÇÃO NOVA -->
 <div class="banner-desc">
 
 <h2>AL VARIEDADES</h2>
 
 <p>
-Moda moderna, qualidade e preços acessíveis em um só lugar.
-Produtos selecionados com estilo, conforto e ótimo custo-benefício para o seu dia a dia.
+Moda moderna com qualidade e preços acessíveis. Produtos selecionados com estilo e conforto para o seu dia a dia.
 </p>
 
 </div>
@@ -208,18 +204,9 @@ Produtos selecionados com estilo, conforto e ótimo custo-benefício para o seu 
 </div>
 </div>
 
-<div class="card">
-<img src="https://picsum.photos/id/1040/400/400">
-<div class="card-content">
-<p>Produto 3</p>
-<p class="price">R$ 99,90</p>
-<button onclick="buy('Produto 3')">Comprar</button>
-</div>
-</div>
-
 </section>
 
-<!-- WHATSAPP -->
+<!-- WHATSAPP CORRIGIDO -->
 <a class="whatsapp" target="_blank"
 href="https://wa.me/557599883008?text=Olá!%20vim%20pelo%20site%20AL%20Variedades">
 📱
@@ -227,6 +214,7 @@ href="https://wa.me/557599883008?text=Olá!%20vim%20pelo%20site%20AL%20Variedade
 
 <script>
 
+/* SLIDER */
 let slides = document.querySelectorAll('.slide');
 let current = 0;
 
@@ -238,6 +226,7 @@ slides[current].classList.add('active');
 
 setInterval(nextSlide,3000);
 
+/* BOTÃO COMPRAR */
 function buy(product){
 let msg = "Olá! quero comprar: " + product;
 window.open("https://wa.me/557599883008?text=" + encodeURIComponent(msg), "_blank");
