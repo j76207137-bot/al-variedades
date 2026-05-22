@@ -21,14 +21,15 @@ background:#f5f5f5;
 overflow-x:hidden;
 }
 
-/* HEADER */
+/* HEADER PREMIUM */
 header{
-background:#ff5a00;
-padding:15px;
-color:#fff;
+background:linear-gradient(90deg,#ff5a00,#ff7a1a);
+padding:18px;
 text-align:center;
-font-size:22px;
-font-weight:bold;
+color:#fff;
+font-size:24px;
+font-weight:800;
+letter-spacing:1px;
 }
 
 /* CATEGORIAS */
@@ -36,24 +37,31 @@ font-weight:bold;
 display:flex;
 gap:10px;
 overflow-x:auto;
-padding:10px;
+padding:12px;
 background:#fff;
 }
 
 .categories div{
-padding:10px 15px;
-background:#eee;
+padding:10px 16px;
+background:#f2f2f2;
 border-radius:20px;
 white-space:nowrap;
 font-size:14px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.categories div:hover{
+background:#ff5a00;
+color:#fff;
 }
 
 /* SLIDER */
 .slider{
 width:100%;
 height:420px;
-overflow:hidden;
 position:relative;
+overflow:hidden;
 }
 
 .slide{
@@ -74,7 +82,7 @@ height:100%;
 object-fit:cover;
 }
 
-/* DESCRIÇÃO */
+/* TEXTO */
 .banner-desc{
 text-align:center;
 padding:25px;
@@ -82,8 +90,12 @@ background:#fff;
 }
 
 .banner-desc h2{
-font-size:26px;
-margin-bottom:10px;
+font-size:28px;
+margin-bottom:8px;
+}
+
+.banner-desc p{
+color:#666;
 }
 
 /* PRODUTOS */
@@ -99,6 +111,11 @@ background:#fff;
 border-radius:12px;
 overflow:hidden;
 box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.03);
 }
 
 .card img{
@@ -114,6 +131,7 @@ padding:10px;
 .price{
 color:#ff5a00;
 font-weight:bold;
+margin-top:5px;
 }
 
 /* BOTÃO */
@@ -121,39 +139,30 @@ font-weight:bold;
 display:block;
 text-align:center;
 padding:10px;
+margin:10px;
 background:#25d366;
 color:#fff;
 text-decoration:none;
-margin:10px;
 border-radius:8px;
+font-weight:bold;
 }
 
-/* CARRINHO */
-.cart{
-position:fixed;
-top:20px;
-right:20px;
-background:#fff;
-padding:10px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
-}
-
-/* WHATSAPP */
+/* WHATSAPP FLUTUANTE */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25d366;
 width:60px;
 height:60px;
+background:#25d366;
 border-radius:50%;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:30px;
+font-size:28px;
 color:#fff;
 text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* RESPONSIVO */
@@ -185,15 +194,15 @@ AL VARIEDADES
 <section class="slider">
 
 <div class="slide active">
-<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1600">
+<img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b">
 </div>
 
 <div class="slide">
-<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1600">
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
 </div>
 
 <div class="slide">
-<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1600">
+<img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff">
 </div>
 
 </section>
@@ -201,7 +210,7 @@ AL VARIEDADES
 <!-- DESCRIÇÃO -->
 <div class="banner-desc">
 <h2>AL VARIEDADES</h2>
-<p>Moda moderna, qualidade e preço baixo em um só lugar.</p>
+<p>Loja moderna com preços baixos e produtos selecionados para você.</p>
 </div>
 
 <!-- PRODUTOS -->
@@ -212,7 +221,7 @@ AL VARIEDADES
 <div class="card-content">
 <p>Camisa Estilosa</p>
 <p class="price">R$ 59,90</p>
-<a class="btn" href="https://wa.me/55759999883008?text=Quero%20a%20Camisa%20Estilosa">Comprar</a>
+<a class="btn" href="https://wa.me/5575999883008?text=Quero%20a%20Camisa%20Estilosa">Comprar no WhatsApp</a>
 </div>
 </div>
 
@@ -221,7 +230,7 @@ AL VARIEDADES
 <div class="card-content">
 <p>Tênis Moderno</p>
 <p class="price">R$ 129,90</p>
-<a class="btn" href="https://wa.me/55759999883008?text=Quero%20o%20Tênis%20Moderno">Comprar</a>
+<a class="btn" href="https://wa.me/5575999883008?text=Quero%20o%20Tênis%20Moderno">Comprar no WhatsApp</a>
 </div>
 </div>
 
@@ -230,26 +239,21 @@ AL VARIEDADES
 <div class="card-content">
 <p>Jaqueta Premium</p>
 <p class="price">R$ 199,90</p>
-<a class="btn" href="https://wa.me/55759999883008?text=Quero%20a%20Jaqueta%20Premium">Comprar</a>
+<a class="btn" href="https://wa.me/5575999883008?text=Quero%20a%20Jaqueta%20Premium">Comprar no WhatsApp</a>
 </div>
 </div>
 
 </section>
 
-<!-- CARRINHO SIMPLES -->
-<div class="cart">
-🛒 Carrinho (em breve)
-</div>
-
-<!-- WHATSAPP -->
+<!-- WHATSAPP FLUTUANTE -->
 <a class="whatsapp" target="_blank"
-href="https://wa.me/55759999883008?text=Olá!%20vim%20pelo%20site%20AL%20Variedades">
+href="https://wa.me/5575999883008?text=Olá!%20vim%20pelo%20site%20AL%20Variedades">
 📱
 </a>
 
 <script>
 
-/* SLIDER */
+/* SLIDER AUTOMÁTICO */
 let slides = document.querySelectorAll('.slide');
 let current = 0;
 
