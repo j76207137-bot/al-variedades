@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-<title>AL VARIEDADES - Loja Oficial</title>
+<title>AL VARIEDADES | Moda & Estilo</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
 
@@ -12,247 +15,825 @@
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background:#f5f5f5;
+background:#f7f7f7;
+color:#111;
+overflow-x:hidden;
 }
 
-/* HEADER */
-header{
-background:linear-gradient(90deg,#ff5a00,#ff7a1a);
+/* ===== TOPO ===== */
+
+.topbar{
+background:#111;
 color:#fff;
-padding:18px;
+padding:8px;
 text-align:center;
-font-size:22px;
-font-weight:bold;
+font-size:14px;
+font-weight:500;
 }
 
-/* CATEGORIAS */
-.categories{
-display:flex;
-gap:10px;
-overflow-x:auto;
-padding:10px;
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 background:#fff;
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 5%;
+z-index:1000;
+box-shadow:0 2px 15px rgba(0,0,0,0.08);
 }
 
-.categories div{
-padding:10px 15px;
-background:#eee;
-border-radius:20px;
-white-space:nowrap;
+.logo{
+font-size:28px;
+font-weight:800;
+color:#ff5a00;
+}
+
+.logo span{
+color:#111;
+}
+
+nav{
+display:flex;
+gap:25px;
+}
+
+nav a{
+text-decoration:none;
+color:#111;
+font-weight:600;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#ff5a00;
+}
+
+.menu-mobile{
+display:none;
+font-size:30px;
 cursor:pointer;
 }
 
-/* PRODUTOS */
-.products{
-display:grid;
-grid-template-columns:repeat(3,1fr);
+/* ===== HERO ===== */
+
+.hero{
+margin-top:90px;
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:center;
+padding:40px 5%;
+background:
+linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5)),
+url('https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=1200&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+color:#fff;
+text-align:center;
+}
+
+.hero-content{
+max-width:700px;
+animation:fade 1.5s ease;
+}
+
+.hero h1{
+font-size:65px;
+font-weight:800;
+line-height:1.1;
+margin-bottom:20px;
+}
+
+.hero p{
+font-size:20px;
+margin-bottom:30px;
+color:#f1f1f1;
+}
+
+.hero-buttons{
+display:flex;
+justify-content:center;
 gap:15px;
-padding:15px;
+flex-wrap:wrap;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+font-size:16px;
+font-weight:700;
+cursor:pointer;
+transition:0.4s;
+text-decoration:none;
+display:inline-block;
+}
+
+.btn-primary{
+background:#ff5a00;
+color:#fff;
+}
+
+.btn-primary:hover{
+background:#ff7b33;
+transform:translateY(-3px);
+}
+
+.btn-secondary{
+background:#fff;
+color:#111;
+}
+
+.btn-secondary:hover{
+transform:translateY(-3px);
+}
+
+/* ===== BANNER ===== */
+
+.banner{
+padding:30px 5%;
+background:linear-gradient(90deg,#ff5a00,#ff7b00);
+color:#fff;
+text-align:center;
+font-size:20px;
+font-weight:600;
+}
+
+/* ===== PRODUTOS ===== */
+
+.section-title{
+text-align:center;
+font-size:42px;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.section-sub{
+text-align:center;
+color:#666;
+margin-bottom:50px;
+}
+
+.products{
+padding:80px 5%;
+}
+
+.product-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:25px;
 }
 
 .card{
 background:#fff;
-border-radius:10px;
+border-radius:20px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-transition:0.3s;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+transition:0.4s;
+position:relative;
 }
 
 .card:hover{
-transform:scale(1.03);
+transform:translateY(-8px);
 }
 
 .card img{
 width:100%;
-height:180px;
+height:300px;
 object-fit:cover;
 }
 
-.card-content{
-padding:10px;
-}
-
-.price{
-color:#ff5a00;
-font-weight:bold;
-margin-top:5px;
-}
-
-/* BOTÕES */
-button{
-width:100%;
-padding:10px;
-background:#25d366;
+.badge{
+position:absolute;
+top:15px;
+left:15px;
+background:#ff0000;
 color:#fff;
-border:none;
-font-weight:bold;
-cursor:pointer;
+padding:6px 12px;
+border-radius:30px;
+font-size:13px;
+font-weight:700;
 }
 
-/* CARRINHO */
-.cart{
-position:fixed;
-top:20px;
-right:20px;
-width:220px;
-background:#fff;
-padding:10px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.2);
+.card-content{
+padding:20px;
 }
 
-.cart h3{
+.card-content h3{
+font-size:20px;
 margin-bottom:10px;
 }
 
-.item{
-font-size:13px;
-display:flex;
-justify-content:space-between;
-margin-bottom:5px;
+.price{
+font-size:24px;
+font-weight:800;
+color:#ff5a00;
+margin-bottom:15px;
 }
 
-/* WHATSAPP */
+.buy-btn{
+width:100%;
+padding:13px;
+border:none;
+background:#111;
+color:#fff;
+border-radius:12px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#ff5a00;
+}
+
+/* ===== SOBRE ===== */
+
+.about{
+padding:80px 5%;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+background:#fff;
+}
+
+.about img{
+width:100%;
+border-radius:25px;
+}
+
+.about-text h2{
+font-size:45px;
+margin-bottom:20px;
+}
+
+.about-text p{
+font-size:17px;
+line-height:1.8;
+color:#555;
+margin-bottom:20px;
+}
+
+/* ===== BENEFÍCIOS ===== */
+
+.benefits{
+padding:80px 5%;
+background:#111;
+color:#fff;
+}
+
+.benefit-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.benefit{
+background:#1c1c1c;
+padding:30px;
+border-radius:20px;
+text-align:center;
+transition:0.3s;
+}
+
+.benefit:hover{
+transform:translateY(-5px);
+background:#ff5a00;
+}
+
+.benefit h3{
+margin-top:15px;
+font-size:22px;
+}
+
+/* ===== AVALIAÇÕES ===== */
+
+.reviews{
+padding:80px 5%;
+}
+
+.review-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.review{
+background:#fff;
+padding:30px;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.review h4{
+margin-top:15px;
+}
+
+/* ===== NEWSLETTER ===== */
+
+.newsletter{
+padding:70px 5%;
+background:linear-gradient(90deg,#111,#222);
+color:#fff;
+text-align:center;
+}
+
+.newsletter input{
+width:100%;
+max-width:400px;
+padding:15px;
+border:none;
+border-radius:50px;
+margin-top:20px;
+outline:none;
+}
+
+/* ===== FOOTER ===== */
+
+footer{
+background:#000;
+color:#fff;
+padding:60px 5% 30px;
+}
+
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+margin-bottom:40px;
+}
+
+.footer-grid h3{
+margin-bottom:15px;
+}
+
+.footer-grid p,
+.footer-grid a{
+color:#ccc;
+text-decoration:none;
+line-height:2;
+}
+
+.copy{
+text-align:center;
+border-top:1px solid #222;
+padding-top:20px;
+color:#777;
+}
+
+/* ===== WHATSAPP ===== */
+
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
-width:60px;
-height:60px;
 background:#25d366;
+width:65px;
+height:65px;
 border-radius:50%;
 display:flex;
-align-items:center;
 justify-content:center;
-font-size:28px;
+align-items:center;
+font-size:35px;
 color:#fff;
 text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+z-index:999;
+animation:pulse 1.5s infinite;
+}
+
+/* ===== ANIMAÇÕES ===== */
+
+@keyframes pulse{
+0%{
+transform:scale(1);
+}
+50%{
+transform:scale(1.1);
+}
+100%{
+transform:scale(1);
+}
+}
+
+@keyframes fade{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* ===== RESPONSIVO ===== */
+
+@media(max-width:900px){
+
+.about{
+grid-template-columns:1fr;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+nav{
+position:fixed;
+top:80px;
+right:-100%;
+width:250px;
+height:100vh;
+background:#fff;
+flex-direction:column;
+padding:40px;
+transition:0.4s;
+box-shadow:-5px 0 15px rgba(0,0,0,0.1);
+}
+
+nav.active{
+right:0;
+}
+
+.menu-mobile{
+display:block;
+}
+
+}
+
+@media(max-width:500px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:16px;
+}
+
+.section-title{
+font-size:32px;
+}
+
 }
 
 </style>
-
 </head>
 <body>
 
+<div class="topbar">
+🔥 Promoções Imperdíveis na AL VARIEDADES • Moda com Estilo e Preço Baixo
+</div>
+
 <header>
-AL VARIEDADES
+
+<div class="logo">
+AL <span>VARIEDADES</span>
+</div>
+
+<nav id="menu">
+
+<a href="#inicio">Início</a>
+<a href="#produtos">Produtos</a>
+<a href="#sobre">Sobre</a>
+<a href="#avaliacoes">Avaliações</a>
+<a href="#contato">Contato</a>
+
+</nav>
+
+<div class="menu-mobile" onclick="abrirMenu()">
+☰
+</div>
+
 </header>
 
-<!-- CATEGORIAS -->
-<div class="categories">
-<div onclick="filter('all')">Todos</div>
-<div onclick="filter('camisas')">Camisas</div>
-<div onclick="filter('tenis')">Tênis</div>
-<div onclick="filter('jaquetas')">Jaquetas</div>
+<!-- HERO -->
+
+<section class="hero" id="inicio">
+
+<div class="hero-content">
+
+<h1>
+AL VARIEDADES
+</h1>
+
+<p>
+A loja que transforma estilo em presença. Moda moderna, qualidade premium e tendências que fazem você se destacar.
+</p>
+
+<div class="hero-buttons">
+
+<a href="#produtos" class="btn btn-primary">
+Ver Coleção
+</a>
+
+<a href="https://wa.me/5575999883008" class="btn btn-secondary">
+Comprar no WhatsApp
+</a>
+
 </div>
 
-<!-- PRODUTOS -->
-<section class="products" id="products">
-
-<div class="card" data-cat="camisas">
-<img src="https://picsum.photos/id/1060/400/400">
-<div class="card-content">
-<p>Camisa Estilosa</p>
-<p class="price">R$ 59,90</p>
-<button onclick="add('Camisa Estilosa',59.90)">Adicionar</button>
-</div>
-</div>
-
-<div class="card" data-cat="tenis">
-<img src="https://picsum.photos/id/1050/400/400">
-<div class="card-content">
-<p>Tênis Moderno</p>
-<p class="price">R$ 129,90</p>
-<button onclick="add('Tênis Moderno',129.90)">Adicionar</button>
-</div>
-</div>
-
-<div class="card" data-cat="jaquetas">
-<img src="https://picsum.photos/id/1040/400/400">
-<div class="card-content">
-<p>Jaqueta Premium</p>
-<p class="price">R$ 199,90</p>
-<button onclick="add('Jaqueta Premium',199.90)">Adicionar</button>
-</div>
 </div>
 
 </section>
 
-<!-- CARRINHO -->
-<div class="cart">
-<h3>🛒 Carrinho</h3>
-<div id="cart"></div>
-<hr>
-<p id="total">Total: R$ 0</p>
-<button onclick="checkout()">Finalizar no WhatsApp</button>
+<!-- BANNER -->
+
+<section class="banner">
+✨ Estilo que impressiona • Qualidade que conquista • Moda que valoriza você
+</section>
+
+<!-- PRODUTOS -->
+
+<section class="products" id="produtos">
+
+<h2 class="section-title">
+Nossos Destaques
+</h2>
+
+<p class="section-sub">
+Os modelos mais desejados da AL VARIEDADES
+</p>
+
+<div class="product-grid">
+
+<div class="card">
+
+<div class="badge">
+-30%
 </div>
 
+<img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=800&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Camiseta Premium</h3>
+
+<div class="price">
+R$ 79,90
+</div>
+
+<button class="buy-btn">
+Comprar Agora
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=800&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Moda Feminina</h3>
+
+<div class="price">
+R$ 149,90
+</div>
+
+<button class="buy-btn">
+Comprar Agora
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<div class="badge">
+Novo
+</div>
+
+<img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=800&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Look Fashion</h3>
+
+<div class="price">
+R$ 199,90
+</div>
+
+<button class="buy-btn">
+Comprar Agora
+</button>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=800&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>Estilo Urbano</h3>
+
+<div class="price">
+R$ 129,90
+</div>
+
+<button class="buy-btn">
+Comprar Agora
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- SOBRE -->
+
+<section class="about" id="sobre">
+
+<img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?q=80&w=1000&auto=format&fit=crop">
+
+<div class="about-text">
+
+<h2>
+Por que escolher a AL VARIEDADES?
+</h2>
+
+<p>
+Na AL VARIEDADES você encontra muito mais do que roupas. Aqui você encontra estilo, personalidade e confiança.
+</p>
+
+<p>
+Criamos uma experiência moderna inspirada nas maiores lojas do mundo para oferecer qualidade, design profissional e atendimento rápido diretamente no WhatsApp.
+</p>
+
+<a href="https://wa.me/5575999883008" class="btn btn-primary">
+Falar com a Loja
+</a>
+
+</div>
+
+</section>
+
+<!-- BENEFÍCIOS -->
+
+<section class="benefits">
+
+<h2 class="section-title">
+Nossos Diferenciais
+</h2>
+
+<div class="benefit-grid">
+
+<div class="benefit">
+<h3>🚚 Entrega Rápida</h3>
+<p>Receba seus pedidos com rapidez e segurança.</p>
+</div>
+
+<div class="benefit">
+<h3>💎 Qualidade Premium</h3>
+<p>Produtos modernos com excelente acabamento.</p>
+</div>
+
+<div class="benefit">
+<h3>🔥 Tendências</h3>
+<p>Moda atual inspirada nas maiores marcas.</p>
+</div>
+
+<div class="benefit">
+<h3>📱 Atendimento Fácil</h3>
+<p>Compre diretamente pelo WhatsApp.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- AVALIAÇÕES -->
+
+<section class="reviews" id="avaliacoes">
+
+<h2 class="section-title">
+Clientes Apaixonados
+</h2>
+
+<p class="section-sub">
+Veja o que estão falando da AL VARIEDADES
+</p>
+
+<div class="review-grid">
+
+<div class="review">
+<p>
+⭐⭐⭐⭐⭐
+<br><br>
+“Site lindo e produtos de qualidade. Atendimento rápido demais!”
+</p>
+<h4>- Mariana</h4>
+</div>
+
+<div class="review">
+<p>
+⭐⭐⭐⭐⭐
+<br><br>
+“Visual profissional, parece loja famosa. Gostei muito.”
+</p>
+<h4>- Carlos</h4>
+</div>
+
+<div class="review">
+<p>
+⭐⭐⭐⭐⭐
+<br><br>
+“Comprei pelo WhatsApp e chegou rápido. Recomendo.”
+</p>
+<h4>- Fernanda</h4>
+</div>
+
+</div>
+
+</section>
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+<h2>
+Receba Promoções Exclusivas
+</h2>
+
+<p>
+Cadastre seu e-mail e fique por dentro das novidades.
+</p>
+
+<input type="email" placeholder="Digite seu e-mail">
+
+</section>
+
+<!-- FOOTER -->
+
+<footer id="contato">
+
+<div class="footer-grid">
+
+<div>
+<h3>AL VARIEDADES</h3>
+<p>
+Moda moderna, criativa e inspirada nas maiores tendências do momento.
+</p>
+</div>
+
+<div>
+<h3>Links</h3>
+<p><a href="#inicio">Início</a></p>
+<p><a href="#produtos">Produtos</a></p>
+<p><a href="#sobre">Sobre</a></p>
+</div>
+
+<div>
+<h3>Contato</h3>
+<p>📱 WhatsApp: (75) 99988-3008</p>
+<p>📍 Brasil</p>
+<p>🕒 Atendimento Online</p>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 AL VARIEDADES • Todos os direitos reservados
+</div>
+
+</footer>
+
 <!-- WHATSAPP -->
-<a class="whatsapp" target="_blank"
-href="https://wa.me/557599883008">
-📱
+
+<a 
+href="https://wa.me/5575999883008" 
+class="whatsapp"
+target="_blank">
+
+💬
+
 </a>
 
 <script>
 
-let cart = [];
-let total = 0;
+function abrirMenu(){
 
-/* ADICIONAR */
-function add(name, price){
-cart.push({name, price});
-total += price;
-render();
-}
-
-/* RENDER CARRINHO */
-function render(){
-let box = document.getElementById("cart");
-box.innerHTML = "";
-
-cart.forEach((item,i)=>{
-box.innerHTML += `
-<div class="item">
-${item.name}
-<span>R$ ${item.price}</span>
-</div>
-`;
-});
-
-document.getElementById("total").innerText =
-"Total: R$ " + total.toFixed(2);
-}
-
-/* CHECKOUT WHATSAPP */
-function checkout(){
-
-let msg = "Olá! quero comprar:%0A";
-
-cart.forEach(i=>{
-msg += "- " + i.name + " R$ " + i.price + "%0A";
-});
-
-msg += "%0ATotal: R$ " + total.toFixed(2);
-
-window.open("https://wa.me/557599883008?text=" + msg, "_blank");
-}
-
-/* FILTRO */
-function filter(cat){
-
-let cards = document.querySelectorAll(".card");
-
-cards.forEach(c=>{
-if(cat === "all"){
-c.style.display = "block";
-}else{
-c.style.display = c.dataset.cat === cat ? "block" : "none";
-}
-});
+document.getElementById("menu").classList.toggle("active");
 
 }
 
